@@ -1,0 +1,14 @@
+{
+    "Users":[{
+        "Username": "alejo86a",
+        "Email": "alejo86a@gmail.com",
+        "Phone_number": 3137081557,
+        "Password": "Pass-123"
+    }],
+    "Messages":[{
+        "Created_at": "2014-01-01T23:28:56.782Z",
+        "Comment": "lorem ipsum dolor sit",
+        "Username": "alejo86a",
+        "id": 1
+    }]
+}
