@@ -39,7 +39,6 @@ class MessageDao {
             }
             $input["id"]=$maxId+1;
             array_push($current_data["Messages"],$input);
-            echo $current_data;
             file_put_contents($this->file_name, json_encode($current_data));
             return $input;
         }

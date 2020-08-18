@@ -1,6 +1,7 @@
 <?php
 require_once("src/shared/GeneralResponse.php");
 require_once("src/api/MessageApi.php");
+require_once("src/api/AccountApi.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -26,8 +27,9 @@ if($uri[2] !== null){
             $api = new MessageApi($requestMethod,$uri);
             $response = $api->processRequest();
             break;
-        case "user":
-            $response = "not yet implemented";
+        case "account":
+            $api = new AccountApi($requestMethod,$uri);
+            $response = $api->processRequest();
             break;
         default:
         $response = $generalResponse->notFoundResponse($uri[2]);

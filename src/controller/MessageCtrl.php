@@ -59,14 +59,14 @@ class MessageCtrl {
     }
 
     private function validateMessage($input)
-    {
-        if (! isset($input["username"])) {
+    {        
+        if (! isset($input["Username"])) {
             return false;
         }
-        if (! isset($input["comment"])) {
+        if (! isset($input["Comment"])) {
             return false;
         }
-        if (! isset($input["created_at"])) {
+        if (! isset($input["Created_at"])) {
             return false;
         }
         return true;
