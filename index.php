@@ -30,10 +30,10 @@ if($uri[2] !== null){
             $response = "not yet implemented";
             break;
         default:
-        $response = $generalResponse->notFoundResponse($uri);
+        $response = $generalResponse->notFoundResponse($uri[2]);
     }
 } else {
-    $response = $generalResponse->notFoundResponse($uri);
+    $response = $generalResponse->notFoundResponse($uri[2]);
 }
 
 echo json_encode($response);

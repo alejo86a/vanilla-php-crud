@@ -18,12 +18,15 @@ class MessageApi {
         $this->generalResponse = new GeneralResponse();
     }
 
-    public function processRequest()
-    {
+    public function processRequest() {
         switch ($this->requestMethod) {
             case 'GET':
-                if ($this->uri[3]) {
-                    $response = $this->messageCtrl->getMessage($this->uri[3]);
+                if (isset($_GET["search"])){
+                    $response = $this->messageCtrl->getMessageByText($_GET["search"]);
+                } else if(isset($_GET["date"])){
+                    $response = $this->messageCtrl->getMessageByDate($_GET["date"]);
+                } else if ($this->uri[3]) {
+                    $response = $this->messageCtrl->getMessageById($this->uri[3]);
                 } else {
                     $response = $this->messageCtrl->getAllMessages();
                 };
@@ -35,7 +38,6 @@ class MessageApi {
                 $response = $this->generalResponse->notFoundResponse();
                 break;
         }
-        header($response['status_code_header']);
         if ($response) {
             return $response;
         }

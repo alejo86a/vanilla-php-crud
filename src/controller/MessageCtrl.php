@@ -21,15 +21,31 @@ class MessageCtrl {
         return $result;
     }
 
-    public function getMessage($id){
-        // $result = $this->personGateway->find($id);
-        // if (! $result) {
-        //     return $this->generalResponse->notFoundResponse("message");
-        // }
-        $response['status_code_header'] = 'HTTP/1.1 200 OK';
-        $response['body'] = json_encode($result);
-        echo "getonem";
-        return $response;
+    public function getMessageById($id){
+        $result = $this->messageDao->find($id);
+        if (! $result) {
+            return $this->generalResponse->notFoundResponse("message not found");
+        }        
+        header("status_code_header: HTTP/1.1 200 OK");
+        return $result;
+    }
+
+    public function getMessageByText($text){
+        $result = $this->messageDao->findByText($text);
+        if (! $result) {
+            return $this->generalResponse->notFoundResponse("any message");
+        }        
+        header("status_code_header: HTTP/1.1 200 OK");
+        return $result;
+    }
+
+    public function getMessageByDate($date){
+        $result = $this->messageDao->findByDate($date);
+        if (! $result) {
+            return $this->generalResponse->notFoundResponse("message");
+        }        
+        header("status_code_header: HTTP/1.1 200 OK");
+        return $result;
     }
 
     public function createMessageFromRequest(){
