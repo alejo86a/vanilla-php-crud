@@ -1,1 +1,20 @@
-{"Accounts":[{"Username":"alejo86a","Email":"alejo86a@gmail.com","Phone_number":3137081557,"Password":"Pass-123","id":1},{"Username":"sergii","Email":"holaa@correo.c","Phone_number":"3003103111","Password":"pasS-456","id":2},{"Username":"sergii","Email":"holaa@correo.c","Phone_number":"3003103111","Password":"pasS-456","id":3}]}
+  
+{
+    "Accounts":[{
+        "Username": "alejo86a",
+        "Email": "alejo86a@gmail.com",
+        "Phone_number": 3137081557,
+        "Password": "Pass-123"
+    }],
+    "Messages":[{
+        "Created_at": "2020-08-16",
+        "Comment": "lorem ipsum dolor sit",
+        "Username": "alejo86a",
+        "id": 1
+    },{
+        "Created_at": "2020-08-17",
+        "Comment": "lorem ipsum sit",
+        "Username": "glorgii",
+        "id": 2
+    }]
+}

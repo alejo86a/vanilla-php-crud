@@ -6,7 +6,7 @@
     <title>Messages</title>
 </head>
 <body>
-    <div class="panel-body">
+    <div class="panel-body" id="account-panel">
         <form id="registrationForm" class="registration">
             <fieldset>
                 <h3>Create Account</h3>
@@ -22,16 +22,67 @@
 
                 <div class="field">
                     <label for="registrationEmail">Email</label>
-                    <textarea id="registrationEmail" class="form-control" type="email" placeholder="Email" name="email"></textarea>
+                    <input id="registrationEmail" class="form-control" type="email" placeholder="Email" name="email"/>
                 </div>
 
                 <div class="field">
                     <label for="registrationPassword">Password</label>
-                    <textarea id="registrationPassword" class="form-control" type="password" placeholder="Password" name="password"></textarea>
+                    <input id="registrationPassword" class="form-control" type="password" placeholder="Password" name="password"/>
                 </div>
 
                 <div class="submit">
                     <button type="submit" id="registration-btn">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+        <form id="loginForm" class="login">
+            <fieldset>
+                <h3>Log In</h3>
+                <div class="field">
+                    <label for="loginUsername">Username</label>
+                    <input id="loginUsername" class="form-control" type="text" placeholder="Username" name="username">
+                </div>
+
+                <div class="field">
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" class="form-control" type="password" placeholder="Password" name="password"/>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" id="login-btn">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="panel-body" id="message-panel">
+        <form id="searchForm" class="search">
+            <fieldset>
+                <h3>Message Posting View</h3>
+                <div class="field">
+                    <input id="searchMessage" class="form-control" type="text" placeholder="Search" name="search"><img src="https://img.icons8.com/cotton/50/000000/search.png"/>
+                </div>
+
+                <div class="field">
+                    <input id="dateMessage" class="form-control" type="text" placeholder="YYYY-MM-DD" name="date"/>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" id="search-btn">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+        <div id="message-wall" class="message-wall">
+            <ul id="messages-list"></ul>
+        </div>
+
+        <form id="messageForm" class="message">
+            <fieldset>
+                <div class="field">
+                    <textarea id="commentMessage" class="form-control" type="text" placeholder="Write a comment ..." name="search"></textarea>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" id="message-btn">Submit</button>
                 </div>
             </fieldset>
         </form>
