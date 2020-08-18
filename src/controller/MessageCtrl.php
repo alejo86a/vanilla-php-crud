@@ -49,23 +49,24 @@ class MessageCtrl {
     }
 
     public function createMessageFromRequest(){
-        $input = (array) json_decode(file_get_contents('php://input'), TRUE);
-        // if (! $this->validateMessage($input)) {
-        //     return $this->generalResponse->unprocessableEntityResponse();
-        // }
-        // $this->personGateway->insert($input);
-        $response['status_code_header'] = 'HTTP/1.1 201 Created';
-        $response['body'] = null;
-        echo "postm";
-        return $response;
+        $input = (array) json_decode(file_get_contents("php://input"), TRUE);
+        if (! $this->validateMessage($input)) {
+            return $this->generalResponse->unprocessableEntityResponse();
+        }
+        $result = $this->messageDao->insert($input);
+        header("status_code_header: HTTP/1.1 201 Created");
+        return $result;
     }
 
     private function validateMessage($input)
     {
-        if (! isset($input['firstname'])) {
+        if (! isset($input["username"])) {
             return false;
         }
-        if (! isset($input['lastname'])) {
+        if (! isset($input["comment"])) {
+            return false;
+        }
+        if (! isset($input["created_at"])) {
             return false;
         }
         return true;

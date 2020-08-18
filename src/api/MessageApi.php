@@ -35,7 +35,7 @@ class MessageApi {
                 $response = $this->messageCtrl->createMessageFromRequest();
                 break;
             default:
-                $response = $this->generalResponse->notFoundResponse();
+                $response = $this->generalResponse->notFoundResponse("api");
                 break;
         }
         if ($response) {

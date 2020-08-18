@@ -28,7 +28,21 @@ class MessageDao {
     }
 
     public function insert(Array $input) {
-
+        if (file_exists($this->file_name)) { 
+            $data = file_get_contents($this->file_name);
+            $current_data = json_decode($data, true);
+            $maxId = 0;
+            foreach($current_data["Messages"] as $m){
+                if($maxId<$m["id"]){
+                    $maxId=$m["id"];
+                }
+            }
+            $input["id"]=$maxId+1;
+            array_push($current_data["Messages"],$input);
+            echo $current_data;
+            file_put_contents($this->file_name, json_encode($current_data));
+            return $input;
+        }
     }
 
     public function findByText($text) {
