@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+<body>
+    <div class="panel-body">
+        <form id="registrationForm" class="registration">
+            <fieldset>
+                <h3>Create Account</h3>
+                <div class="field">
+                    <label for="registrationUsername">Username</label>
+                    <input id="registrationUsername" class="form-control" type="text" placeholder="Username" name="username">
+                </div>
+
+                <div class="field">
+                    <label for="registrationPhone">Phone</label>
+                    <input id="registrationPhone" class="form-control" type="tel" placeholder="Phone" name="phone" pattern="[0-9]{10}">
+                </div>
+
+                <div class="field">
+                    <label for="registrationEmail">Email</label>
+                    <textarea id="registrationEmail" class="form-control" type="email" placeholder="Email" name="email"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="registrationPassword">Password</label>
+                    <textarea id="registrationPassword" class="form-control" type="password" placeholder="Password" name="password"></textarea>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" id="registration-btn">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    
+    <script src="/public/js/http.js"></script>
+    <script src="/public/js/script.js"></script>
+</body>
+</html>
